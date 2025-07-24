@@ -1,0 +1,21 @@
+# Azure App Service の設定ファイル
+# このファイルはアプリケーションのルートディレクトリに配置する必要があります
+
+# Node.js のバージョンを指定
+node_version: 20
+
+# ビルドコマンド
+pre_build_command: npm ci
+build_command: npm run build
+
+# アプリケーションの起動コマンド
+startup_file: server.js
+
+# 環境変数の設定
+app_settings:
+  - name: NODE_ENV
+    value: production
+  - name: WEBSITE_NODE_DEFAULT_VERSION
+    value: 20.x
+  - name: SCM_DO_BUILD_DURING_DEPLOYMENT
+    value: true
